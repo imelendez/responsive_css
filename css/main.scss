@@ -1,0 +1,40 @@
+$colors: rgb(173, 216, 230),rgba(173, 216, 230, 0.671),rgb(173, 216, 230),rgba(173, 216, 230, 0.671),rgb(173, 216, 230), rgba(173, 216, 230, 0.671);
+body, html{
+    height: 100%;
+    background-color: darkgoldenrod;
+}
+
+body{
+    margin:0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1{
+    margin: 3rem;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem,1fr));
+    cursor: pointer;
+    .card{
+        transition: transform 1s;
+
+        @for $i from 1 to 7 {
+            &:nth-of-type(#{$i}){
+                background: nth($colors,$i);
+            }
+        }
+
+        &:hover{
+            transform:translate(-10px);
+        }
+        img{
+            width:100%
+        }
+    }
+
+    .info{
+        padding: 1rem;
+    }
+}
